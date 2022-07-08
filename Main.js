@@ -14,11 +14,27 @@ const SymbolTable=['.',',','?','§','!','<','>','=','*','/','-','+','|','^','(',
 
 const RandomTable=((Math.random())*10).toFixed(0);
 
+let length=8;
+let Password='';
+let RandomPosition=((Math.random())*10).toFixed();
+
 function PasswordGenerator(){
+
+    while(length >0)
+    {
+
+        Password=Password+SymbolTable[RandomPosition]+NumbersTable[RandomPosition]
+                         +AlphabetTableLowerCase[RandomPosition]+AlphabetTableUppercase[RandomPosition];
+        RandomPosition=((Math.random())*10).toFixed();
+        length--;
+
+    }
+
+    return Password;
 
 };
 
 // console.log(AlphabetTableLowerCase);
 // console.log(AlphabetTableUppercase);
 
-console.log(RandomTable);
+console.log(PasswordGenerator());
