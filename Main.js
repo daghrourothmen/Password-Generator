@@ -16,8 +16,8 @@ const RandomTable=((Math.random())*10).toFixed(0);
 
 let length=8;
 let Password='';
-let RandomPosition=((Math.random())*10).toFixed();
-
+let RandomPosition=((Math.random())*10).toFixed(0);
+let tab=[RandomPosition];
 function PasswordGenerator(){
 
     while(length >0)
@@ -25,12 +25,13 @@ function PasswordGenerator(){
 
         Password=Password+SymbolTable[RandomPosition]+NumbersTable[RandomPosition]
                          +AlphabetTableLowerCase[RandomPosition]+AlphabetTableUppercase[RandomPosition];
-        RandomPosition=((Math.random())*10).toFixed();
+        RandomPosition=((Math.random())*10).toFixed(0);
         length--;
+       tab.push(RandomPosition);
 
     }
 
-    return Password;
+    return console.log(Password,' ',tab);
 
 };
 
